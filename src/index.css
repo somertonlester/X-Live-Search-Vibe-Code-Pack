@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown-content {
+  @apply text-white/90;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  @apply text-white font-semibold mt-6 mb-4;
+}
+
+.markdown-content h1 {
+  @apply text-2xl;
+}
+
+.markdown-content h2 {
+  @apply text-xl;
+}
+
+.markdown-content h3 {
+  @apply text-lg;
+}
+
+.markdown-content p {
+  @apply mb-4;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply mb-4 pl-6;
+}
+
+.markdown-content li {
+  @apply mb-2;
+}
+
+.markdown-content ul > li {
+  @apply list-disc;
+}
+
+.markdown-content ol > li {
+  @apply list-decimal;
+}
+
+.markdown-content code {
+  @apply bg-white/10 px-1.5 py-0.5 rounded text-sm;
+}
+
+.markdown-content pre {
+  @apply bg-white/10 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-white/20 pl-4 italic my-4;
+}
+
+.markdown-content a {
+  @apply text-electricCyan hover:underline;
+}
+
+.markdown-content table {
+  @apply w-full mb-4;
+}
+
+.markdown-content th,
+.markdown-content td {
+  @apply border border-white/20 p-2;
+}
+
+.markdown-content th {
+  @apply bg-white/10;
+}
