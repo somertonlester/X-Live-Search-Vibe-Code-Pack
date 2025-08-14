@@ -271,26 +271,26 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-violet-600">
+    <div className="min-h-screen bg-gradient-to-br from-white to-gray-100">
       <Toaster position="top-right" />
       
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Interactive Alert System
           </h1>
-          <p className="text-white/80 max-w-xl mx-auto">
+          <p className="text-gray-700 max-w-xl mx-auto">
             Send different types of alerts with a single click. Each alert triggers a specialized workflow.
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto mb-16">
-          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-pulse"></div>
+          <div className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-2xl p-6 relative overflow-hidden shadow-lg">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-100/50 via-gray-200/30 to-gray-300/20 animate-pulse"></div>
             <div className="relative">
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6 text-amber-400" />
-                <h2 className="text-xl font-semibold text-white">Ask Anything</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Ask Anything</h2>
               </div>
               <div className="flex gap-3">
                 <input
@@ -299,7 +299,7 @@ function App() {
                   onChange={(e) => setGeneralQuestion(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask any question..."
-                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-white/40"
+                  className="flex-1 px-4 py-3 bg-white/80 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-400"
                 />
                 <button
                   onClick={sendGeneralQuestion}
@@ -324,11 +324,11 @@ function App() {
           {alertCards.map((card) => (
             <div
               key={card.type}
-              className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-white hover:bg-white/20 transition-all duration-300"
+              className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-2xl p-6 text-gray-900 hover:bg-white transition-all duration-300 shadow-lg"
             >
               {card.icon}
               <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-white/70 text-sm mb-4">
+              <p className="text-gray-600 text-sm mb-4">
                 {card.description}
               </p>
               
@@ -338,17 +338,17 @@ function App() {
                   value={questions[card.type] || ''}
                   onChange={(e) => handleQuestionChange(card.type, e.target.value)}
                   placeholder="Enter your question..."
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-white/40"
+                  className="w-full px-3 py-2 bg-white/80 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-400"
                 />
                 
                 <button
                   onClick={() => sendAlert(card.type)}
                   disabled={loadingCards[card.type] || !questions[card.type]?.trim()}
-                  className="w-full px-4 py-2 bg-white/20 rounded-lg text-white font-medium hover:bg-white/30 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-gray-200 rounded-lg text-gray-900 font-medium hover:bg-gray-300 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loadingCards[card.type] ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 border-2 border-gray-400/20 border-t-gray-600 rounded-full animate-spin"></div>
                       <span>Processing...</span>
                     </>
                   ) : (
@@ -363,7 +363,7 @@ function App() {
         <button
           onClick={() => setActiveCard('custom')}
           disabled={Object.values(loadingCards).some(Boolean) || loadingGeneral}
-          className="fixed bottom-8 right-8 bg-white text-violet-600 rounded-full p-4 shadow-lg hover:bg-violet-100 transition-all duration-300 disabled:opacity-50"
+          className="fixed bottom-8 right-8 bg-gray-900 text-white rounded-full p-4 shadow-lg hover:bg-gray-800 transition-all duration-300 disabled:opacity-50"
         >
           <Plus className="w-6 h-6" />
         </button>
@@ -372,36 +372,36 @@ function App() {
       <Dialog.Root open={showResponse !== null} onOpenChange={() => setShowResponse(null)}>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
-          <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl max-h-[80vh] bg-slate-900/95 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl overflow-hidden">
-            <div className="sticky top-0 bg-slate-900/95 backdrop-blur-lg border-b border-white/10 p-4 flex items-center justify-between">
-              <Dialog.Title className="text-xl font-semibold text-white">Response</Dialog.Title>
+          <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl max-h-[80vh] bg-white/95 backdrop-blur-lg border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+            <div className="sticky top-0 bg-white/95 backdrop-blur-lg border-b border-gray-200 p-4 flex items-center justify-between">
+              <Dialog.Title className="text-xl font-semibold text-gray-900">Response</Dialog.Title>
               <Dialog.Close asChild>
-                <button className="text-white/70 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-lg">
+                <button className="text-gray-600 hover:text-gray-900 transition-colors p-1 hover:bg-gray-100 rounded-lg">
                   <X className="w-5 h-5" />
                 </button>
               </Dialog.Close>
             </div>
             <div className="p-6 overflow-y-auto max-h-[calc(80vh-4rem)]">
               {showResponse && responses[showResponse] && (
-                <div className="prose prose-invert prose-lg max-w-none">
+                <div className="prose prose-gray prose-lg max-w-none">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
-                      h1: ({node, ...props}) => <h1 className="text-2xl font-bold mb-4 text-white" {...props} />,
-                      h2: ({node, ...props}) => <h2 className="text-xl font-bold mb-3 text-white" {...props} />,
-                      h3: ({node, ...props}) => <h3 className="text-lg font-bold mb-2 text-white" {...props} />,
-                      p: ({node, ...props}) => <p className="mb-4 text-white/90 leading-relaxed" {...props} />,
+                      h1: ({node, ...props}) => <h1 className="text-2xl font-bold mb-4 text-gray-900" {...props} />,
+                      h2: ({node, ...props}) => <h2 className="text-xl font-bold mb-3 text-gray-900" {...props} />,
+                      h3: ({node, ...props}) => <h3 className="text-lg font-bold mb-2 text-gray-900" {...props} />,
+                      p: ({node, ...props}) => <p className="mb-4 text-gray-800 leading-relaxed" {...props} />,
                       ul: ({node, ...props}) => <ul className="mb-4 space-y-2" {...props} />,
                       ol: ({node, ...props}) => <ol className="mb-4 space-y-2" {...props} />,
-                      li: ({node, ...props}) => <li className="text-white/90" {...props} />,
+                      li: ({node, ...props}) => <li className="text-gray-800" {...props} />,
                       code: ({node, inline, ...props}) => 
                         inline ? (
-                          <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-white" {...props} />
+                          <code className="bg-gray-100 px-1.5 py-0.5 rounded text-sm text-gray-900" {...props} />
                         ) : (
-                          <code className="block bg-white/10 p-4 rounded-lg mb-4 overflow-x-auto text-sm text-white" {...props} />
+                          <code className="block bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto text-sm text-gray-900" {...props} />
                         ),
                       blockquote: ({node, ...props}) => (
-                        <blockquote className="border-l-4 border-white/20 pl-4 italic my-4 text-white/80" {...props} />
+                        <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4 text-gray-700" {...props} />
                       ),
                     }}
                   >
