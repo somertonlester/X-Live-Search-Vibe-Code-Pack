@@ -271,7 +271,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-black/10">
       <Toaster position="top-right" />
       
       <div className="container mx-auto px-4 py-16">

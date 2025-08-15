@@ -293,6 +293,6 @@ const sharingPatterns = [
 
 const getShareColor = (percentage: number) => {
   if (percentage >= 40) return '#00D9FF';
-  if (percentage >= 20) return '#6B5B95';
+  if (percentage >= 20) return '#000000';
   return '#10B981';
 };

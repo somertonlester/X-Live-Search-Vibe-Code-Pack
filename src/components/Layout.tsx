@@ -20,8 +20,8 @@ export const Layout: React.FC = () => {
       
       {/* Ambient background elements */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gray-200/50 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gray-300/30 rounded-full blur-[100px]"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-black/20 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-black/30 rounded-full blur-[100px]"></div>
       </div>
     </div>
   );

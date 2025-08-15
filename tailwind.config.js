@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         electricCyan: '#00D9FF',
-       deepBlue: '#FFFFFF',
+        deepBlue: '#FFFFFF',
+        gradientBlack: '#000000',
       },
       typography: (theme) => ({
         invert: {
